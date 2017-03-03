@@ -1,0 +1,318 @@
+/*box-shadow: 0 3px 3px #e6e6e6*/
+
+html, body {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+}
+
+/* App.js */
+#App {
+    width: 100%;
+    height: 100%;
+}
+
+/* Header.js */
+
+#header {
+	position: fixed;
+	background: rgba(0,0,0,0.7);
+	top: 0;
+	right: 0;
+	left: 0;
+	z-index: 100;
+	padding: .75em;
+	color: white;
+    font-family: Pacifico;
+    font-size: 22px;
+}
+
+#header-title {
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+#header-title:hover {
+    color: #ee6e73;
+}
+
+#header-left a {
+    color: #26a69a;
+    transition: all 0.3s ease-in-out;
+}
+
+#header-left a:hover {
+    color: white;
+}
+
+.social-links a {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    height: 36px;
+    width: 36px;
+    font-size: 1.6rem;
+    line-height: 1.9;
+    background-color: rgba(0, 0, 0, 0.0980392);
+    margin: 0px 4px;
+    border-radius: 50px;
+    border: 1px solid white;
+    transition: all 0.3s ease-in-out;
+    text-align: center;
+    float: right;
+}
+
+.social-links a:hover {
+    color: #ee6e73;
+}
+
+/* Navbar.js */
+#Navbar {
+    width: 100%;
+    background-color: black;
+    color: white;
+}
+
+#header-img {
+    background-image: url('../img/city2.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    width: 100%;
+    height: 700px;
+}
+
+.title {
+    font-weight: 800;
+    font-size: 50px;
+    font-family: Pacifico;
+    text-shadow: 0 2px 6px #111;
+    text-align: center;
+    padding-top: 220px;
+}
+
+.title h2 {
+    font-size: 45px;
+    box-shadow: 0 2px 6px #111;
+    border: 2px solid white;
+    display: inline-block;
+    padding: 10px;
+}
+
+.rotator-title {
+    font-weight: 500;
+    font-size: 50px;
+    text-align: center;
+    font-family: monospace;
+    text-shadow: 0 2px 6px #111;
+}
+
+.cd-headline.rotate-1 .cd-words-wrapper {
+    perspective: 300px;
+    font-size: 35px;
+    text-shadow: 0 2px 6px #111;
+    text-align: center;
+}
+
+.cd-headline.rotate-1 b {
+    opacity: 0;
+    transform-origin: 50% 100%;
+    transform: rotateX(180deg);
+    position: absolute;
+}
+
+.cd-headline.rotate-1 b.is-visible {
+    position: absolute;
+    opacity: 1;
+    transform: rotateX(0deg);
+    animation: cd-rotate-1-in 1.2s;
+}
+
+.cd-headline.rotate-1 b.is-hidden {
+    transform: rotateX(180deg);
+    animation: cd-rotate-1-out 1.2s;
+}
+
+@keyframes cd-rotate-1-in {
+    0% {
+        transform: rotateX(180deg);
+        opacity: 0;
+    }
+    35% {
+        transform: rotateX(120deg);
+        opacity: 0;
+    }
+    65% {
+        opacity: 0;
+    }
+    100% {
+        transform: rotateX(360deg);
+        opacity: 1;
+    }
+}
+
+@keyframes cd-rotate-1-out {
+    0% {
+        transform: rotateX(0deg);
+        opacity: 1;
+    }
+    35% {
+        transform: rotateX(-40deg);
+        opacity: 1;
+    }
+    65% {
+        opacity: 0;
+    }
+    100% {
+        transform: rotateX(180deg);
+        opacity: 0;
+    }
+}
+
+/* Footer.js */
+footer {
+    background-color: #3b3f51;
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+#footer-left h3 {
+    font-size: 30px !important;
+    font-weight: 100;
+}
+
+#footer-left p {
+    font-size: 14px;
+    font-weight: 200;
+}
+
+#footer-right {
+    font-size: 24px;
+}
+
+.footer-tags {
+    font-size: 16px;
+    word-wrap: break-word;
+    padding-top: 20px
+}
+
+/* Maps.js */
+#google {
+    background-color: white;;
+    color: black;
+    text-align: center;
+    padding-bottom: 224px;
+}
+
+#google-container {
+    position: absolute;
+    width: 1265px;
+    height: 228px;
+    border: 1px solid black;
+    box-shadow: 0 8px 10px 1px rgba(0,0,0,0.14), 0 3px 14px 2px rgba(0,0,0,0.12), 0 5px 5px -3px rgba(0,0,0,0.3);
+}
+
+#google-map {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+/* Projects.js */
+#projects {
+    background-color: #bce8f1;
+    color: white;
+    text-align: center;
+    overflow: hidden;
+}
+
+.single-project {
+    font-size: 30px;
+}
+
+#project-1 {
+    background-image: url('../img/priorities.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 250px;
+    border: 1px solid black;
+}
+
+#project-2 {
+    background-image: url('../img/loading.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 250px;
+    border: 1px solid black;
+}
+
+#project-3 {
+    background-image: url('../img/thoughts.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 250px;
+    overflow: hidden;
+    border: 1px solid black;
+}
+
+/* Request.js */
+#request {
+    /*background-color: #64EABE;*/
+    background-color: white;
+    color: black;
+    text-align: center;
+    padding-top: 75px;
+    padding-bottom: 75px;
+    font-family: 'Raleway', sans-serif;
+}
+
+#request-img {
+    background-image: url('../img/thunder.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+}
+
+.request-description {
+    font-family: Montserrat, sans-serif;
+    padding-top: 20px;
+}
+
+.form-title {
+    padding-bottom: 30px;
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+    font-size: 28px;
+}
+.form-control {
+    border-radius: 0px !important;
+    box-shadow: 0 3px 3px #e6e6e6 !important;
+}
+
+.btn.btn-lg {
+    font-size: 17px;
+    font-weight: 200 !important;
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+    letter-spacing: 0.5px;
+    width: 50%;
+    color: white;
+    background-color: #26a69a;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 8px 10px 1px rgba(0,0,0,0.14), 0 3px 14px 2px rgba(0,0,0,0.12), 0 5px 5px -3px rgba(0,0,0,0.3);
+    border-radius: 0px important!;
+}
+
+.btn.btn-lg:hover {
+    background: #ee6e73;
+    color: white;
+}

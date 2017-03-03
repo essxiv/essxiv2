@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>xiv.</title>
+        <link rel="stylesheet" type="text/css" href="./css/custom.css">
+        <link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.css">
+        <link rel="stylesheet" href="./bower_components/font-awesome/css/font-awesome.css">
+        <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Pacifico" />
+    </head>
+    <body>
+        <div id="App"></div>
+        <script type="text/javascript" src="/build/bundle.js"></script>
+        <script type="text/javascript" src="./bower_components/jquery/dist/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                console.log('jQuery Works..')
+
+                var animationDelay = 2500
+
+                animateHeadline($('.cd-headline'))
+
+                function animateHeadline($headlines) {
+                    $headlines.each(function() {
+                        var headline = $(this)
+                        setTimeout(function() {
+                            hideWord(headline.find('.is-visible'))
+                        }, animationDelay)
+                    })
+                }
+
+                function hideWord($word) {
+                    var nextWord = takeNext($word)
+                    switchWord($word, nextWord)
+                    setTimeout(function() {
+                        hideWord(nextWord)
+                    }, animationDelay)
+                }
+
+                function takeNext($word) {
+                    return (!$word.is(':last-child')) ? $word.next() : $word.parent().children().eq(0)
+                }
+
+                function switchWord($oldWord, $newWord) {
+                    $oldWord.removeClass('is-visible').addClass('is-hidden')
+                    $newWord.removeClass('is-hidden').addClass('is-visible')
+                }
+
+                singleLetters($('.cd-headline.letters').find('b'));
+
+                function singleLetters($words) {
+                	$words.each(function(){
+                		var word = $(this),
+                			letters = word.text().split(''),
+                			selected = word.hasClass('is-visible');
+                		for (i in letters) {
+                			letters[i] = (selected) ? '<i class="in">' + letters[i] + '</i>': '<i>' + letters[i] + '</i>';
+                		}
+                	    var newLetters = letters.join('');
+                	    word.html(newLetters);
+                	});
+                }
+
+            })
+        </script>
+    </body>
+</html>
